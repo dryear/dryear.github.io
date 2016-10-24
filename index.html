@@ -105,13 +105,12 @@
 <li><p>Assume that when <em>n = i</em> (where <em>i &gt; k</em>), each item is kept in the array with probability of <em>k / i</em>.</p>
 </li>
 <li><p>Then when <em>n = i + 1</em>, the new item would be kept in the array with probability of <em>k / (i + 1)</em>.</p>
-<p>  Meanwhile, for the first <em>i</em> items, each of them would be kept in the array with probability of <em>(k / i) \</em> (1 - (k / (i + 1)) * (1 / k))<em>, i.e. </em>k / (i + 1)*.</p>
-<p>  Q.E.D.</p>
+<p>  Meanwhile, for the first <em>i</em> items, each of them would be kept in the array with probability of <em>(k / i) <em> (1 - (k / (i + 1)) </em> (1 / k))</em>, i.e. <em>k / (i + 1)</em>.</p>
 <p>  Note that:</p>
 <p>  <em>k / i</em> is the probability that one of the first <em>i</em> items was kept in the array before the current step according to the assumption.</p>
 <p>  <em>k / (i + 1)</em> is the probability that the new item would be kept in the array.</p>
 <p>  <em>1 / k</em> is the probability of choosing an item from the array.</p>
-<p>  <em>1 - (k / (i + 1)) \</em> (1 / k)* is the probability that an item in the array would not be replaced.</p>
+<p>  <em>1 - (k / (i + 1)) * (1 / k)</em> is the probability that an item in the array would not be replaced.</p>
 </li>
 </ul>
 </li>
