@@ -59,6 +59,97 @@
 
   
     
+    <h3 class="article-title"><a href="/2016/10/23/A-Note-on-Reservoir-Sampling/"><span>A Note on Reservoir Sampling</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2016/10/23/A-Note-on-Reservoir-Sampling/" rel="bookmark">
+        <time class="entry-date published" datetime="2016-10-24T05:17:46.000Z">
+          Sun Oct 23 2016
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Reservoir_sampling" target="_blank" rel="external">Reservoir sampling</a> is a family of randomized algorithms for randomly choosing a sample of <em>k</em> items from a list <em>S</em> containing <em>n</em> items, where <em>n</em> is either a very large or unknown number. Typically <em>n</em> is large enough that the list doesn’t fit into main memory.</p>
+</blockquote>
+<h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><ol>
+<li><p>Create an array of size <em>k</em>, and keep the first <em>k</em> items from the list in it.</p>
+</li>
+<li><p>For the <em>i</em>-th item (where <em>k &lt; i &lt;= n</em>):</p>
+<ul>
+<li><p>Generate a random integer <em>j</em> from <em>1</em> to <em>i</em>.</p>
+</li>
+<li><p>If <em>1 &lt;= j &lt;= k</em>, replace the <em>j</em>-th item in the array with the new item.</p>
+</li>
+<li><p>Otherwise, ignore the new item.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>Proof of the correctness by induction:</p>
+<ol>
+<li><p>Base case: when <em>n = k</em>, all items are in the array, which is correct.</p>
+</li>
+<li><p>Inductive step:</p>
+<ul>
+<li><p>Assume that when <em>n = i</em> (where <em>i &gt; k</em>), each item is kept in the array with probability of <em>k / i</em>.</p>
+</li>
+<li><p>Then when <em>n = i + 1</em>, the new item would be kept in the array with probability of <em>k / (i + 1)</em>.</p>
+<p>  Meanwhile, for the first <em>i</em> items, each of them would be kept in the array with probability of <em>(k / i) \</em> (1 - (k / (i + 1)) * (1 / k))<em>, i.e. </em>k / (i + 1)*.</p>
+<p>  Q.E.D.</p>
+<p>  Note that:</p>
+<p>  <em>k / i</em> is the probability that one of the first <em>i</em> items was kept in the array before the current step according to the assumption.</p>
+<p>  <em>k / (i + 1)</em> is the probability that the new item would be kept in the array.</p>
+<p>  <em>1 / k</em> is the probability of choosing an item from the array.</p>
+<p>  <em>1 - (k / (i + 1)) \</em> (1 / k)* is the probability that an item in the array would not be replaced.</p>
+</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="2016/10/23/A-Note-on-Reservoir-Sampling/#comment">Comments</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2016/10/11/How-to-Create-a-Blog-with-Hexo-and-GitHub-Pages-on-macOS-Sierra/"><span>How to Create a Blog with Hexo and GitHub Pages on macOS Sierra</span></a></h3>
     
   
