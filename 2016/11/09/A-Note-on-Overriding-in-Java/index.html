@@ -3,21 +3,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Becoming Sanjuro | Fail again. Fail better.</title>
+  <title>A Note on Overriding in Java | Becoming Sanjuro | Fail again. Fail better.</title>
 
   
   <meta name="author" content="Dry Ear">
   
 
   
+  <meta name="description" content="Method overriding, in object oriented programming, is a language feature that allows a subclass or child class to provide a specific implementation of">
+  
 
+  
+  
+  <meta name="keywords" content="">
   
 
   <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  
+  <meta property="og:title" content="A Note on Overriding in Java"/>
 
   <meta property="og:site_name" content="Becoming Sanjuro"/>
 
@@ -54,12 +59,11 @@
 </header>
 
     <main class="site-main posts-loop">
-    
-  <article>
+    <article>
 
   
     
-    <h3 class="article-title"><a href="/2016/11/09/A-Note-on-Overriding-in-Java/"><span>A Note on Overriding in Java</span></a></h3>
+    <h3 class="article-title"><span>A Note on Overriding in Java</span></h3>
     
   
 
@@ -110,203 +114,38 @@
     </div>
 
     
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="2016/11/09/A-Note-on-Overriding-in-Java/#comment">Comments</a>
-        </span>
-      </span>
-    </div>
-    
   </div>
 </article>
 
-
-
-  <article>
-
   
-    
-    <h3 class="article-title"><a href="/2016/10/23/A-Note-on-Reservoir-Sampling/"><span>A Note on Reservoir Sampling</span></a></h3>
-    
-  
+	<section id="comments" class="comment">
+	  <div id="disqus_thread">
+	  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	  </div>
+	</section>
 
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2016/10/23/A-Note-on-Reservoir-Sampling/" rel="bookmark">
-        <time class="entry-date published" datetime="2016-10-24T05:17:46.000Z">
-          Sun Oct 23 2016
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><blockquote>
-<p><a href="https://en.wikipedia.org/wiki/Reservoir_sampling" target="_blank" rel="external">Reservoir sampling</a> is a family of randomized algorithms for randomly choosing a sample of <em>k</em> items from a list <em>S</em> containing <em>n</em> items, where <em>n</em> is either a very large or unknown number. Typically <em>n</em> is large enough that the list doesn’t fit into main memory.</p>
-</blockquote>
-<h2 id="Algorithm"><a href="#Algorithm" class="headerlink" title="Algorithm"></a>Algorithm</h2><ol>
-<li><p>Create an array of size <em>k</em>, and keep the first <em>k</em> items from the list in it.</p>
-</li>
-<li><p>For the <em>i</em>-th item (where <em>k &lt; i &lt;= n</em>):</p>
-<ul>
-<li><p>Generate a random integer <em>j</em> from <em>1</em> to <em>i</em>.</p>
-</li>
-<li><p>If <em>1 &lt;= j &lt;= k</em>, replace the <em>j</em>-th item in the array with the new item.</p>
-</li>
-<li><p>Otherwise, ignore the new item.</p>
-</li>
-</ul>
-</li>
-</ol>
-<p>Proof of the correctness by induction:</p>
-<ol>
-<li><p>Base case: when <em>n = k</em>, all items are in the array, which is correct.</p>
-</li>
-<li><p>Inductive step:</p>
-<ul>
-<li><p>Assume that when <em>n = i</em> (where <em>i &gt; k</em>), each item is kept in the array with probability of <em>k / i</em>.</p>
-</li>
-<li><p>Then when <em>n = i + 1</em>, the new item would be kept in the array with probability of <em>k / (i + 1)</em>.</p>
-<p>  Meanwhile, for the first <em>i</em> items, each of them would be kept in the array with probability of <em>(k / i) <em> (1 - (k / (i + 1)) </em> (1 / k))</em>, i.e. <em>k / (i + 1)</em>.</p>
-<p>  Note that:</p>
-<p>  <em>k / i</em> is the probability that one of the first <em>i</em> items was kept in the array before the current step according to the assumption.</p>
-<p>  <em>k / (i + 1)</em> is the probability that the new item would be kept in the array.</p>
-<p>  <em>1 / k</em> is the probability of choosing an item from the array.</p>
-<p>  <em>1 - (k / (i + 1)) * (1 / k)</em> is the probability that an item in the array would not be replaced.</p>
-</li>
-</ul>
-</li>
-</ol>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="2016/10/23/A-Note-on-Reservoir-Sampling/#comment">Comments</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
-    <h3 class="article-title"><a href="/2016/10/11/How-to-Create-a-Blog-with-Hexo-and-GitHub-Pages-on-macOS-Sierra/"><span>How to Create a Blog with Hexo and GitHub Pages on macOS Sierra</span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2016/10/11/How-to-Create-a-Blog-with-Hexo-and-GitHub-Pages-on-macOS-Sierra/" rel="bookmark">
-        <time class="entry-date published" datetime="2016-10-12T00:10:36.000Z">
-          Tue Oct 11 2016
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <p>I finally created my own blog last week. Because I had been learning <a href="https://nodejs.org/" target="_blank" rel="external">Node.js</a> recently, I wanted to try to use a platform built on it. First I found <a href="https://ghost.org/" target="_blank" rel="external">Ghost</a>. But it seemed hard to create a Ghost blog with GitHub Pages. Then I found <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>. It looked like exactly what I wanted. Simple and stylish.</p>
-<p>Although there are so many tutorials of setting up Hexo and GitHub Pages, I think it is better to write down how I create my blog, and I hope it will help you.</p>
-<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><p>Before installing Hexo, <a href="https://nodejs.org/" target="_blank" rel="external">Node.js</a> and <a href="https://git-scm.com/" target="_blank" rel="external">Git</a> should be installed on your Mac. Please follow setup guides on their official websites.</p>
-<h2 id="Installing-and-Initializing-Hexo"><a href="#Installing-and-Initializing-Hexo" class="headerlink" title="Installing and Initializing Hexo"></a>Installing and Initializing Hexo</h2><p>Now, Hexo can be installed with <code>npm</code>.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo npm install -g hexo</div></pre></td></tr></table></figure>
-<p>Then, initialize Hexo. Here <code>BLOG</code> is the directory for your blog.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init BLOG</div></pre></td></tr></table></figure>
-<p>Next, move to the directory.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> BLOG</div></pre></td></tr></table></figure>
-<p>Then, run the installation command.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install</div></pre></td></tr></table></figure>
-<p>Next, start the server.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>Now, open <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> in your browser.</p>
-<p><code>Hello World!</code></p>
-<h2 id="Hosting-on-Your-GitHub-Account"><a href="#Hosting-on-Your-GitHub-Account" class="headerlink" title="Hosting on Your GitHub Account"></a>Hosting on Your GitHub Account</h2><p>Now, create a new repository named <code>YOURUSERNAME.github.io</code> on GitHub, replaceing <code>YOURUSERNAME</code> with your GitHub username.</p>
-<p>Then, add lines into <code>_config.yml</code> in <code>BLOG</code>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># Deployment</div><div class="line">## Docs: https://hexo.io/docs/deployment.html</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: https://github.com/YOURUSERNAME/YOURUSERNAME.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
-<p>Next, generate static files.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>Then, deploy your blog.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>If you meet <code>ERROR Deployer not found: git</code>, run the command below.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
-<p>Then, run generate and deploy commands again.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>Now, open <code>http://YOURUSERNAME.github.io</code> in your browser. For me, it is <a href="http://dryear.github.io" target="_blank" rel="external">http://dryear.github.io</a></p>
-<p><code>Hello World!</code></p>
-<h2 id="Configuring-Your-Own-Domain"><a href="#Configuring-Your-Own-Domain" class="headerlink" title="Configuring Your Own Domain"></a>Configuring Your Own Domain</h2><p>I bought my own domain from <a href="https://www.godaddy.com/" target="_blank" rel="external">GoDaddy</a>, and I chose <a href="https://www.dnspod.cn/" target="_blank" rel="external">DNSPod</a> as my DNS hosting provider because of my friends in China.</p>
-<p>After setting up on both GoDaddy and DNSPod, create a file named <code>CNAME</code> in <code>BLOG/themes/YOURTHEMENAME/source</code>, add your own domain in it. For me, it is <code>dryear.me</code>.</p>
-<p>Then, run the commands below to deploy again.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo clean</div><div class="line">$ hexo generate</div><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>Now, open your own domain in your browser.</p>
-<p><code>Hello World!</code></p>
-
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="2016/10/11/How-to-Create-a-Blog-with-Hexo-and-GitHub-Pages-on-macOS-Sierra/#comment">Comments</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
+	<script type="text/javascript">
+	var disqus_shortname = 'dryear';
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	</script>
 
 
 
 
-<nav class="pagination">
-  
-  
-</nav>
+
     </main>
 
     <footer class="site-footer">
